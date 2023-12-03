@@ -1,6 +1,6 @@
 var questions = [
     {
-        prompt: "What color is the book 1Q84 by Haruki Murakami?\(a) green\n(b) black\n\(c) white",
+        prompt: "What color is the book '1Q84' by Haruki Murakami?\(a) green\n(b) black\n\(c) white",
         answer: "c"
     },
     {
@@ -12,18 +12,19 @@ var questions = [
         answer: "b"
     },
 ]
-var userscore = 0; 
+console.log(alert)
 
+var score = 0; 
 for(var i=0; i < questions.length; i++){
-    var select = window.prompt(questions[i].prompt) 
-    if(select == questions[i].answer){ 
-        userscore++;
+    var response = window.prompt(questions[i].prompt) 
+    if(response == questions[i].answer){ 
+        score++;
         alert("You got it!")
     } else {
         alert("WRONGGG!");
     }
 }
-alert("Your score was " + userscore + "/" + questions.length)
+alert("Your score was " + score + "/" + questions.length)
 
 /* function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
 
