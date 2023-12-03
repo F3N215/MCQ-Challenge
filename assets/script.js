@@ -25,6 +25,17 @@ for(var i=0; i < questions.length; i++){
     }
 
 
+
+
+
+
+
+
+    
     /*
-1. I want to ask the user a set of questions 
-2. I want to show a score of 
+- I want to trigger a set of questions when a user hits the start button
+- When the question appears I want a timer to start
+
+
+- I want to show a score of correct questions vs. incorrect questions
+- I want to start a timer when the question apepars
