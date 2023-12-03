@@ -12,3 +12,11 @@ var questions = [
         answer: "b"
     },
 ]
+var score = 0
+
+for(var i=0; i < questions.length; i++){
+    var select = window.prompt(questions[i].prompt)
+    if(select == questions[i].answer){
+        
+    }
+}
