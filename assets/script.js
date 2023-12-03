@@ -1,6 +1,9 @@
 function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
 
-    function showQuestions(questions, quizContainer){ 
+    function showQuestions(questions, quizContainer){
+        var output = [];
+        var answers; 
+        // for loop goes here?
     }
 
     function showScore(questions, quizContainer, resultsContainer){
@@ -55,3 +58,4 @@ for(var i=0; i < questions.length; i++){
 
 - I want to show a score of correct questions vs. incorrect questions (results)
 - I need a place to put the quiz, space for results, and a button
+- I need to store output and answer choices
