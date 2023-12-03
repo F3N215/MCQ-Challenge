@@ -1,20 +1,3 @@
-function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
-
-    function showQuestions(questions, quizContainer){
-        var output = [];
-        var answers; 
-        // for loop goes here?
-    }
-
-    function showScore(questions, quizContainer, resultsContainer){
-    }
-
-    showQuestions(questions, quizContainer);
-    submitBtn.onclick = function(){
-        showResults(questions, quizContainer, resultsContainer);
-    }
-}
-
 var questions = [
     {
         prompt: "What color is the book 1Q84 by Haruki Murakami?\(a) green\n(b) black\n\(c) white",
@@ -29,17 +12,37 @@ var questions = [
         answer: "b"
     },
 ]
-var userscore = 0 // # of correct questions
+var userscore = 0; 
 
 for(var i=0; i < questions.length; i++){
-    var select = window.prompt(questions[i].prompt) // loop X times per quetions in array
-    if(select == questions[i].answer){
+    var select = window.prompt(questions[i].prompt) 
+    if(select == questions[i].answer){ 
         userscore++;
         alert("You got it!")
-    }else{
+    } else {
         alert("WRONGGG!");
-        }
     }
+}
+alert("Your score was " + userscore + "/" + questions.length)
+
+/* function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
+
+    function showQuestions(questions, quizContainer){
+        var output = [];
+        var answers; 
+        // for loop goes here?
+    }
+
+    function showScore(questions, quizContainer, resultsContainer){
+    }
+
+    showQuestions(questions, quizContainer);
+    submitBtn.onclick = function(){
+        showResults(questions, quizContainer, resultsContainer);
+    }
+} 
+*/
+
 
 
 
@@ -58,4 +61,4 @@ for(var i=0; i < questions.length; i++){
 
 - I want to show a score of correct questions vs. incorrect questions (results)
 - I need a place to put the quiz, space for results, and a button
-- I need to store output and answer choices
+- I need to store output and answer choices */
