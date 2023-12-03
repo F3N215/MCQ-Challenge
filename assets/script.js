@@ -12,11 +12,19 @@ var questions = [
         answer: "b"
     },
 ]
-var score = 0
+var userscore = 0
 
 for(var i=0; i < questions.length; i++){
     var select = window.prompt(questions[i].prompt)
     if(select == questions[i].answer){
-        
+        userscore++;
+        alert("You got it!")
+    }else{
+        alert("WRONGGG!");
+        }
     }
-}
+
+
+    /*
+1. I want to ask the user a set of questions 
+2. I want to show a score of 
