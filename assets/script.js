@@ -10,7 +10,7 @@ for(var i=0; i < questions.length; i++){
 }
 alert("Your score was " + score + "/" + questions.length) */
 
-const quizQuestions = [
+const questions = [
     {
         question: "What color is the book '1Q84' by Haruki Murakami?", 
         select: ["Green", "Black", "Red", "White"],
@@ -22,12 +22,31 @@ const quizQuestions = [
         answer: 2
     },
     {
-        question: "In Neil Gaiman's 'Sandman' who are the 3 Nightmares?" 
-        select: ["Gorf, Hulpert & Brega", "Corinthian, Fiddler's Green, & Gault","Terry, Howard & Ryan", "Omega, Alomar, & Torson"],
+        question: "In Neil Gaiman's 'Sandman' who are the 3 Nightmares?", 
+        select: ["Gorf, Hulpert, & Brega", "Corinthian, Fiddler's Green, & Gault","Terry, Howard & Ryan", "Omega, Alomar, & Torson"],
         answer: 2
+    },
+    {
+        question: "In Netflix's 'Daredevil', who is Matt Murdock's legal partner?", 
+        select: ["Michael", "Hubert", "Foggy", "Franklin"],
+        answer: 3
     },
 ];
 
+function showQuestion() {
+    const questionText = document.getElementById("question-text");
+    question.Text.textContent = questions[currentQuestion].question;
+
+    const choices = document.querySelectorAll(".select");
+    choices.forEach((select, index) => {
+        select.textContent = questions[currentQuestion].select[index];
+    });
+
+
+
+}
+
+/*
 function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
     }
     function showQuestions(questions, quizContainer){
@@ -54,7 +73,7 @@ function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
 
     function showScore(questions, quizContainer, resultsContainer){
     }
-
+*/
 
 // submit functions to show results 
     function showResults(questions, quizContainer, resultsContainer){
