@@ -10,18 +10,21 @@ for(var i=0; i < questions.length; i++){
 }
 alert("Your score was " + score + "/" + questions.length) */
 
-var quizQuestions = [
+const quizQuestions = [
     {
-        prompt: "What color is the book '1Q84' by Haruki Murakami?\(a) green\n(b) black\n\(c) white",
-        answer: "c"
+        question: "What color is the book '1Q84' by Haruki Murakami?", 
+        select: ["Green", "Black", "Red", "White"],
+        answer: 3
     },
     {
-        prompt: "Who is Anton Chigurh?\(a) a policeman\n(b) an assassin\n\(c) a milkman",
-        answer: "b"
+        question: "Who is Anton Chigurh?",
+        select: ["A policeman", "A milkman", "An assassin", "An optometrist"],
+        answer: 2
     },
     {
-        prompt: "In Neil Gaiman's 'Sandman' who are the 3 nightmares?\(a) Gorf, Hulpert & Brega\n(b) Corinthian, Fiddler's Green, & Gault\n\(c) Terry, Howard & Ryan",
-        answer: "b"
+        question: "In Neil Gaiman's 'Sandman' who are the 3 Nightmares?" 
+        select: ["Gorf, Hulpert & Brega", "Corinthian, Fiddler's Green, & Gault","Terry, Howard & Ryan", "Omega, Alomar, & Torson"],
+        answer: 2
     },
 ];
 
@@ -42,7 +45,7 @@ function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
                 );
             }
         output.push(
-            '<div class="question">' + questions{i}.question + '</div>'
+            '<div class="question">' + questions[i].question + '</div>',
             + '<div class="answers">'+ answers.join('') + '</div>'
             );
         }
@@ -52,6 +55,8 @@ function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
     function showScore(questions, quizContainer, resultsContainer){
     }
 
+
+// submit functions to show results 
     function showResults(questions, quizContainer, resultsContainer){
         showQuestions(questions, quizContainer);
         subtmitButton.onclick - function(){
@@ -64,10 +69,6 @@ function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
         showResults(questions, quizContainer, resultsContainer);
     }
 } 
-
-
-
-
 
 
 
