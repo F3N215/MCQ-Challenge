@@ -14,7 +14,7 @@ var questions = [
 ]
 console.log(alert)
 
-var score = 0; 
+/* var score = 0; 
 for(var i=0; i < questions.length; i++){
     var response = window.prompt(questions[i].prompt) 
     if(response == questions[i].answer){ 
@@ -24,14 +24,27 @@ for(var i=0; i < questions.length; i++){
         alert("WRONGGG!");
     }
 }
-alert("Your score was " + score + "/" + questions.length)
+alert("Your score was " + score + "/" + questions.length) */
 
-/* function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
-
+function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
+    }
     function showQuestions(questions, quizContainer){
+    function showResults(questions, quizContainer, resultsContainer){
+        showQuestions(questions, quizContainer);
+        subtmitButton.onclick - function(){
+            showResults(questions, quizContainer, resultsContainer);
+        }
+    }
         var output = [];
         var answers; 
-        // for loop goes here?
+        for(var i=0; i < questions.length; i++){
+            answers = []
+            for(a in questions[i].answers){
+                answers.push(
+
+                )
+            }
+
     }
 
     function showScore(questions, quizContainer, resultsContainer){
@@ -42,11 +55,6 @@ alert("Your score was " + score + "/" + questions.length)
         showResults(questions, quizContainer, resultsContainer);
     }
 } 
-*/
-
-
-
-
 
 
 
