@@ -1,13 +1,14 @@
-// global
-let currentQuestion = 0;
+// global (to refer to outside of functions)
 let correctAnswers = 0;
+let timerStart = 100;
+let userScore = 0;
+let quizTimer; // open variable
+let scoreBoard = [];
+let userSave;
+let currentQuestion;
+let currentQuestionIndex = 0;
 
-let timerStart = 90;
-let quizTimer;
 const timePenalty = 10;
-
-
-
 
 // questions/multiple choice arrays
 const questions = [
@@ -36,9 +37,13 @@ const questions = [
 
 function showQuestion() { // change below elements
     const questionHeading = document.createElement('h2');
-    questionHeading.textContent = 
+    questionHeading.textContent = questions[currentQuestion.index] // ಠ_ಠ
+    currentQuestions.    
     
     
+
+
+
     
     questions
     
