@@ -1,22 +1,22 @@
 const questions = [
     {
         question: "What color is the book '1Q84' by Haruki Murakami?", 
-        select: ["Green", "Black", "Red", "White"],
+        choice: ["Green", "Black", "Red", "White"],
         answer: 3
     },
     {
         question: "Who is Anton Chigurh?",
-        select: ["A policeman", "A milkman", "An assassin", "An optometrist"],
+        choice: ["A policeman", "A milkman", "An assassin", "An optometrist"],
         answer: 2
     },
     {
         question: "In Neil Gaiman's 'Sandman' who are the 3 Nightmares?", 
-        select: ["Gorf, Hulpert, & Brega", "Corinthian, Fiddler's Green, & Gault","Terry, Howard & Ryan", "Omega, Alomar, & Torson"],
+        choice: ["Gorf, Hulpert, & Brega", "Corinthian, Fiddler's Green, & Gault","Terry, Howard & Ryan", "Omega, Alomar, & Torson"],
         answer: 2
     },
     {
         question: "In Netflix's 'Daredevil', who is Matt Murdock's legal partner?", 
-        select: ["Michael", "Hubert", "Foggy", "Franklin"],
+        choice: ["Michael", "Hubert", "Foggy", "Franklin"],
         answer: 3
     },
     // more questions here
@@ -24,7 +24,6 @@ const questions = [
 
 let currentQuestion = 0;
 let correctAnswers = 0;
-
 
 function showQuestion() {
     const questionText = document.getElementById("question-text");
@@ -35,13 +34,21 @@ function showQuestion() {
         select.textContent = questions[currentQuestion].select[index];
     });
 
-
-
+    const feedback = document.getElementById("feedback");
+    feedback.textContent = "";
 }
 
+function checkAnswer(selected) {
+const feedback = document.getElementById("feedback");
+    if (selected === questions[currentQuestion].correct){
+        feedback.textContent = "You got it!"
+        correctAnswers++;
+        } else {
+        feedback.textContent = "WRONG!";
+        } 
+}
 
-
-// submit functions to show results 
+/* submit functions to show results 
     function showResults(questions, quizContainer, resultsContainer){
         showQuestions(questions, quizContainer);
         subtmitButton.onclick - function(){
