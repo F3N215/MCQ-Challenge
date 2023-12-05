@@ -2,7 +2,10 @@
 let currentQuestion = 0;
 let correctAnswers = 0;
 
+let timerStart = 90;
+let quizTimer;
 const timePenalty = 10;
+
 
 
 
