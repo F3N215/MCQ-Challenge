@@ -1,3 +1,12 @@
+// global
+let currentQuestion = 0;
+let correctAnswers = 0;
+
+const timePenalty = 10;
+
+
+
+// questions/multiple choice arrays
 const questions = [
     {
         question: "What color is the book '1Q84' by Haruki Murakami?", 
@@ -19,19 +28,23 @@ const questions = [
         choice: ["Michael", "Hubert", "Foggy", "Franklin"],
         answer: 3
     },
-    // more questions here
+    // add more questions here
 ];
 
-let currentQuestion = 0;
-let correctAnswers = 0;
-
-function showQuestion() {
-    const questionText = document.getElementById("question-text");
+function showQuestion() { // change below elements
+    const questionHeading = document.createElement('h2');
+    questionHeading.textContent = 
+    
+    
+    
+    questions
+    
+    ("question-text"); // display question text
     question.textContent = questions[currentQuestion].question;
 
-    const choices = document.querySelectorAll(".select");
-    choices.forEach((select, index) => {
-        select.textContent = questions[currentQuestion].select[index];
+    const choices = document.querySelectorAll(".choice");
+    choices.forEach((choice, index) => {
+        choice.textContent = questions[currentQuestion].choice[index];
     });
 
     const feedback = document.getElementById("feedback");
@@ -60,11 +73,6 @@ const feedback = document.getElementById("feedback");
         showResults(questions, quizContainer, resultsContainer);
     }
 } 
-
-
-
-
-
 
 
 
