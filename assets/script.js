@@ -36,11 +36,29 @@ const questions = [
 ];
 
 function showQuestion() { // change below elements
+    const questionContainer = document.getElementById("quiz-container");
     const questionHeading = document.createElement('h2');
-    questionHeading.textContent = questions[currentQuestion.index] // ಠ_ಠ
-    currentQuestions.    
+    questionHeading.textContent = questions[currentQuestionIndex].question
+    questionContainer.innerHTML = "";
+    questionContainer.appendChild(questionHeading);
     
-    
+    for (let i = 0; i < questions[currentQuestionIndex].choice.length; i++) {
+    const choiceBtn = document.createElement("button");
+    choiceBtn.textContent = questions[currentQuestionIndex].choice[i];
+    choiceBtn.addEventListener("click", () => checkAns(i));
+    questionContainer.appendChild(choiceBtn);   
+    }
+}
+
+function checkAns(userChoice){
+    if (userChoice === question[currentQuestionIndex].answer) {
+        correctAnswers++;
+        userScore == 10; // adds score based on boolean = true
+    } else {
+        userScore -= timePenalty;
+    }    
+}
+
 
 
 
