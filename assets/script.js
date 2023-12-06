@@ -41,6 +41,18 @@ function startQuiz() {
  //   quizTimer = ();
 }
 
+function startTimer(){
+    quizTimer = setInterval(function ()) {
+        timerStart--;
+        updateTimer();
+        if(timerStart <= 0) {
+            clearInterval(quizTimer)
+            endQuiz();
+        }
+    }
+}
+
+
 function showQuestion() {
     const questionContainer = document.getElementById("quiz-container");
     const questionHeading = document.createElement('h2');
