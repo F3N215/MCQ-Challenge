@@ -60,7 +60,7 @@ function checkAns(userChoice){
     }    
 }
 
-// increment questions after being answered
+// +1 question after being answered or end quiz
 currentQuestionIndex++;
 if (currentQuestion < questions.length) {
     showQuestion();
@@ -68,6 +68,11 @@ if (currentQuestion < questions.length) {
     endQuiz();
 }
 
+function startQuiz() {
+    currentQuestionIndex = 0;
+    showQuestion();
+    quizTimer = 
+}
 
 
 
