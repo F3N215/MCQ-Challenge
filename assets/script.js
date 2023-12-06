@@ -96,19 +96,23 @@ function loadResults(){
     let finalResults = localStorage.getItem("results");
     scoreBoard.push(finalResults);
     listScore();
-
 }
 
 function userList(){
-
 }
-
 
 function listScore(){
     const scoreContainer = document.getElementById("score-board");
+
+    
+    // need to create <ul> 
+    // need to create <li>
+    // need to enter initials/save score
+    // play again <btn>
     
     // getting a handle on this div
-    scoreContainer.textContent = scoreBoard
+    // scoreContainer.textContent = scoreBoard
+
 
 }
 
