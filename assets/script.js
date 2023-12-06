@@ -35,12 +35,18 @@ const questions = [
     // add more questions here
 ];
 
+function startQuiz() {
+    currentQuestionIndex = 0;
+    showQuestion();
+ //   quizTimer = ();
+}
+
 function showQuestion() {
     const questionContainer = document.getElementById("quiz-container");
     const questionHeading = document.createElement('h2');
-    questionHeading.textContent = questions[currentQuestionIndex].question
-    questionContainer.innerHTML = "";
-    questionContainer.appendChild(questionHeading);
+    questionHeading.textContent = questions[currentQuestionIndex].question // topdown order of questions
+    quizContainer.innerHTML = "";
+    quiztionContainer.appendChild(questionHeading);
     
     for (let i = 0; i < questions[currentQuestionIndex].choice.length; i++) {
     const choiceBtn = document.createElement("button");
@@ -52,44 +58,76 @@ function showQuestion() {
 
 // answer check + score/penalty
 function checkAns(userChoice){
-    if (userChoice === question[currentQuestionIndex].answer) {
+    if (userChoice === questions[currentQuestionIndex].answer) {
         correctAnswers++;
         userScore == 10; // adds score based on boolean = true
     } else {
         userScore -= timePenalty;
-    }    
+    }
+    incrQuestion();    
 }
 
 // +1 question after being answered or end quiz
-currentQuestionIndex++;
-if (currentQuestion < questions.length) {
-    showQuestion();
-} else {
-    endQuiz();
+function incrQuestion(){
+    currentQuestionIndex++;
+    if (currentQuestion < questions.length) {
+        showQuestion();
+    } else {
+        endQuiz();
+    }
 }
 
-function startQuiz() {
-    currentQuestionIndex = 0;
-    showQuestion();
-    quizTimer = 
+function endQuiz() {
+    // if no time left, endQuiz
+    // if no more questions, endQuiz
+    // on endQuiz show listUsers
+    console.log("endQuiz")// address HTML/CSS first
 }
+
+function gameOver(){
+    listUsers();
+}
+
+function saveResults(){
+    localStorage.setItem("results", userScore)
+}
+
+function loadResults(){
+    let finalResults = localStorage.getItem("results");
+    scoreBoard.push(finalResults);
+    listScore();
+
+}
+
+function userList(){
+
+}
+
+
+function listScore(){
+    const scoreContainer = document.getElementById("score-board");
+    
+    // getting a handle on this div
+    scoreContainer.textContent = scoreBoard
+
+}
+
+
+
+
+
+
+
 
 
 
     
-    questions
-    
-    ("question-text"); // display question text
-    question.textContent = questions[currentQuestion].question;
 
-    const choices = document.querySelectorAll(".choice");
+
+/* const choices = document.querySelectorAll(".choice");
     choices.forEach((choice, index) => {
         choice.textContent = questions[currentQuestion].choice[index];
     });
-
-    const feedback = document.getElementById("feedback");
-    feedback.textContent = "";
-}
 
 
 /* submit functions to show results 
