@@ -108,27 +108,31 @@ function gameOver(){
 }
 
 function saveResults(){
+    const userSig = document.getElementById("input-initials").value; 
     const userResult = {
+        initials: userSig,
         score: userScore,
-    }
+    };
     localStorage.setItem("results", userScore)
 }
 
 function loadResults(){
     const finalResults = localStorage.getItem("results");
-    // const user
-    scoreBoard.push(finalResults);
-    listScore();
-}
-
-function listUsers(){
-    const userContainer = document.getElementById("users-container");
-    userContainer.innerHTML = "";
+    const userResult = JSON.parse(userResultString);
+    if (userResult){  
+        scoreBoard.push(finalResults);
+        listScore();
+    };   
 }
 
 function listScore(){
     const scoreContainer = document.getElementById("score-board");
     scoreContainer.innerHTML = "";
+
+    for(const user of scoreBoard) {
+        const userElement = document.createElement("div");
+        userElement.textContent = ''
+    }
     
     // need to create <ul> 
     // need to create <li>
@@ -137,6 +141,13 @@ function listScore(){
     
     // getting a handle on this div
     // scoreContainer.textContent = scoreBoard
+
+function listUsers(){
+    const userContainer = document.getElementById("user-container");
+    userContainer.innerHTML = "";
+}
+
+
 
 
 }
