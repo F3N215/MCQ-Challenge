@@ -42,14 +42,21 @@ function startQuiz() {
 }
 
 function startTimer(){
-    quizTimer = setInterval(function ()) {
+    quizTimer = setInterval(function () {
         timerStart--;
         updateTimer();
-        if(timerStart <= 0) {
-            clearInterval(quizTimer)
-            endQuiz();
-        }
+
+    if(timerStart <= 0) {
+        clearInterval(quizTimer)
+        endQuiz();
     }
+}, 1000);
+}
+
+function updateTime(){
+    const timeDisplay = document.getElementById("time-display")
+    
+
 }
 
 
