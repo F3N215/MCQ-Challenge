@@ -38,7 +38,7 @@ const questions = [
 function startQuiz() {
     currentQuestionIndex = 0;
     showQuestion();
- //   quizTimer = ();
+    startTimer();
 }
 
 function startTimer(){
@@ -55,10 +55,9 @@ function startTimer(){
 
 function updateTime(){
     const timeDisplay = document.getElementById("time-display")
-    
+
 
 }
-
 
 function showQuestion() {
     const questionContainer = document.getElementById("quiz-container");
@@ -105,7 +104,8 @@ function endQuiz() {
 
 function gameOver(){
     listUsers();
-}
+    saveResults();
+    }
 
 function saveResults(){
     localStorage.setItem("results", userScore)
@@ -117,12 +117,12 @@ function loadResults(){
     listScore();
 }
 
-function userList(){
+function listUsers(){
+    
 }
 
 function listScore(){
     const scoreContainer = document.getElementById("score-board");
-
     
     // need to create <ul> 
     // need to create <li>
