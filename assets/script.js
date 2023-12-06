@@ -35,7 +35,7 @@ const questions = [
     // add more questions here
 ];
 
-function showQuestion() { // change below elements
+function showQuestion() {
     const questionContainer = document.getElementById("quiz-container");
     const questionHeading = document.createElement('h2');
     questionHeading.textContent = questions[currentQuestionIndex].question
@@ -50,6 +50,7 @@ function showQuestion() { // change below elements
     }
 }
 
+// answer check + score/penalty
 function checkAns(userChoice){
     if (userChoice === question[currentQuestionIndex].answer) {
         correctAnswers++;
@@ -57,6 +58,14 @@ function checkAns(userChoice){
     } else {
         userScore -= timePenalty;
     }    
+}
+
+// increment questions after being answered
+currentQuestionIndex++;
+if (currentQuestion < questions.length) {
+    showQuestion();
+} else {
+    endQuiz();
 }
 
 
@@ -77,15 +86,6 @@ function checkAns(userChoice){
     feedback.textContent = "";
 }
 
-function checkAnswer(selected) {
-const feedback = document.getElementById("feedback");
-    if (selected === questions[currentQuestion].correct){
-        feedback.textContent = "You got it!"
-        correctAnswers++;
-        } else {
-        feedback.textContent = "WRONG!";
-        } 
-}
 
 /* submit functions to show results 
     function showResults(questions, quizContainer, resultsContainer){
