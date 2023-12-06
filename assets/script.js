@@ -105,24 +105,30 @@ function endQuiz() {
 function gameOver(){
     listUsers();
     saveResults();
-    }
+}
 
 function saveResults(){
+    const userResult = {
+        score: userScore,
+    }
     localStorage.setItem("results", userScore)
 }
 
 function loadResults(){
-    let finalResults = localStorage.getItem("results");
+    const finalResults = localStorage.getItem("results");
+    // const user
     scoreBoard.push(finalResults);
     listScore();
 }
 
 function listUsers(){
-    
+    const userContainer = document.getElementById("users-container");
+    userContainer.innerHTML = "";
 }
 
 function listScore(){
     const scoreContainer = document.getElementById("score-board");
+    scoreContainer.innerHTML = "";
     
     // need to create <ul> 
     // need to create <li>
