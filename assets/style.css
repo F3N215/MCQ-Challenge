@@ -1,8 +1,15 @@
 body {
     background-color: #ffffff;
-  }
-  
-  .quiz-container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:darkgreen;
+}
+
+.question {
+    ;
+}
+
+
+#quiz-container {
     box-sizing: border-box;
     width: 100%;
     max-width: 600px;
@@ -11,24 +18,21 @@ body {
     background-color: rgb(249, 249, 249);
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .choices {
-    display: flex;
-  }
+}
   
-  .choice {
+.choice {
     font-size: 1em;
     display: block;
     margin: 5px 5px;
-    padding: .5em .75em;
+    padding: 0.5em 0.75em;
     background-color: #a55eb9;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
   
-  .choice:hover {
+.choice:hover {
     background-color: #9a29b9;
-  }
+}
+  

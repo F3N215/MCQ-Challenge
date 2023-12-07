@@ -5,35 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAVASCRIPT QUIZ</title>
     <link rel="style" href="/assets/style.css">
-    <script src="assets/script.js"></script>
 </head>
 
 <body>
-    <header>
-        <div id="time-display"></div>
-        <div id="quiz-container">
-            <h2></h2>
-            <div class="question">
-                <button class="choice" onclick="checkAns(0)"></button>
-            
+    <!-- start button -->
+    <div class="startBtn"><button onclick="startQuiz()">Start!</div></button>
+    <!-- rules -->
+    <div class="rules">
+        
+
+    </div>
 
 
+    <div id="quiz-container">
+    
+        <div id="time-display">
 
-                <div id ="leader-board">
-
-
-                </div>
-
-                <div id ="score-board"></div>
-                <div id ="user-container"></div>
-                    <input type="text" id="input-initials" placehodler="Add your initials!">
-
-                </div>
-                <p id="feedback"></p>
-              </div>
-            </div>    
-    </header>
         </div>
+            <div class="question">
+                <!-- <button class="choice" onclick="checkAns(0)"></button> -->
+                <button class="choice" onclick="checkAns(1)"></button>
+                <button class="choice" onclick="checkAns(2)"></button>
+                <button class="choice" onclick="checkAns(3)"></button>
+                <button class="choice" onclick="checkAns(4)"></button>
+            </div>
+    </div>
 
+                <div id ="user-container"></div>
+                        <input type="text" id="input-initials" placehodler="Add your initials!">
+
+                </div>
+
+    <script src="assets/script.js"></script>            
 </body>
 </html>

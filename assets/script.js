@@ -113,7 +113,7 @@ function saveResults(){
         initials: userSig,
         score: userScore,
     };
-    localStorage.setItem("results", userScore)
+    localStorage.setItem("results", JSON.stringify(userResult));
 }
 
 function loadResults(){
@@ -131,9 +131,8 @@ function listScore(){
 
     for(const user of scoreBoard) {
         const userElement = document.createElement("div");
-        userElement.textContent = ''
+        userElement.textContent = "";
     }
-    
     // need to create <ul> 
     // need to create <li>
     // need to enter initials/save score
