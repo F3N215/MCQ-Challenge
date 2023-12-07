@@ -1,38 +1,63 @@
-body {
-    background-color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:darkgreen;
-}
-
-.question {
-    ;
-}
-
-
-#quiz-container {
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2em;
-    background-color: rgb(249, 249, 249);
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-  
-.choice {
-    font-size: 1em;
-    display: block;
-    margin: 5px 5px;
-    padding: 0.5em 0.75em;
-    background-color: #a55eb9;
-    color: white;
-    border: none;
-    border-radius: 5px;
+
+body{
+    background: #ae5555;
+}
+
+.start-btn,
+.rules{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.list-rules{
+    width: 540px;
+    background: #ffff;
+    border-radius: 10px;
+}
+
+/* start button */
+.start-btn button{
+    font-size: 25px;
+    font-weight: 550px;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    padding: 15px 30px;
+    outline: none;
+    box-shadow: 5px 1px 10px 1px;
+    border-radius: 20px;
     cursor: pointer;
 }
-  
-.choice:hover {
-    background-color: #9a29b9;
+
+.rules{
+    width: 500px;
+     background: #fff;
+     border-radius: 10px;
+}    
+
+.rules .how-to-play{
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    font-size: 20px;
+    font-weight: 600px;
 }
-  
+
+.list-rules .rule{
+    padding: 15px 35px;
+}
+
+.list-rules .rule{
+
+}
