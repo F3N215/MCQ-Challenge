@@ -38,12 +38,14 @@ const questions = [
 function startQuiz() {
     const quizBtn = document.getElementById("start-btn")
     quizBtn.addEventListener("click", function(){startQuiz})
+    correctAnswers = 0;
+    userScore = 0;
     currentQuestionIndex = 0;
     showQuestion();
     startTimer();
 }
 
-function startTimer(){
+function startTimer(){ // starts timer
     quizTimer = setInterval(function () {
         timerStart--;
         updateTimer();
@@ -56,14 +58,18 @@ function startTimer(){
 }
 
 function updateTime(){
-    const timeDisplay = document.getElementById("time-display")
+    const timeDisplay = document.querySelector(".seconds");
+    timerDisplay.textContent = timerStart
 }
 
 function showQuestion() {
-    const quizContainer = document.getElementById("quiz-container");
+
+    const quizContainer = document.querySelector(".showquest");
     quizContainer.innerHTML = "";
 
-    const currentQuestion = questions[0];
+    const currentQuestion = questions[currentQuestionIndex];
+    currentQuestion = questions[0];
+  
     const questionElement = document.createElement("div");
     questionElement.textContent = currentQuestion.question;
 
@@ -117,12 +123,11 @@ function endQuiz() {
     // if no time left, endQuiz
     // if no more questions, endQuiz
     // on endQuiz show listUsers
-    console.log("endQuiz")// address HTML/CSS first
 }
 
 function gameOver(){
-    listUsers();
     saveResults();
+    listUsers();
 }
 
 function saveResults(){
@@ -148,9 +153,12 @@ function listScore(){
     scoreContainer.innerHTML = "";
 
     for(const user of scoreBoard) {
-        const userElement = document.createElement("div");
-        userElement.textContent = "";
+        const userElmnt = document.createElement("div");
+        userElmnt.textContent = 'User Score: ${user.score}';
+        scoreContainer.appendChild(scoreElmnt);
     }
+}
+
     // need to create <ul> 
     // need to create <li>
     // need to enter initials/save score
