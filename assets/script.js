@@ -120,12 +120,16 @@ function incrQuestion(){
 }
 
 function endQuiz() {
-    // if no time left, endQuiz
+    clearInterval(quizTimer);
+    gameOver();
+    listUsers();
+    // endQuiz -> reset timer
     // if no more questions, endQuiz
     // on endQuiz show listUsers
 }
 
 function gameOver(){
+    clearInterval(quizTimer);
     saveResults();
     listUsers();
 }
@@ -136,6 +140,7 @@ function saveResults(){
         initials: userSig,
         score: userScore,
     };
+    scoreBoard.push(userResult)
     localStorage.setItem("results", JSON.stringify(userResult));
 }
 
@@ -146,6 +151,11 @@ function loadResults(){
         scoreBoard.push(finalResults);
         listScore();
     };   
+}
+
+function listUsers(){
+    const userContainer = document.getElementById("score-board");
+    userContainer.innerHTML = "";
 }
 
 function listScore(){
@@ -167,10 +177,7 @@ function listScore(){
     // getting a handle on this div
     // scoreContainer.textContent = scoreBoard
 
-function listUsers(){
-    const userContainer = document.getElementById("user-container");
-    userContainer.innerHTML = "";
-}
+
 
 
 
