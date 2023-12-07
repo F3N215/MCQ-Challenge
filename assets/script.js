@@ -1,9 +1,10 @@
 // global (to refer to outside of functions)
+// lexical scope: these variables can only function within curly braces
 let correctAnswers = 0;
 let timerStart = 100;
 let userScore = 0;
 let quizTimer; // open variable
-let scoreBoard = [];
+let scoreBoard = JSON.parse(localStorage.getItem("results")) || [];
 let userSave;
 let currentQuestion;
 let currentQuestionIndex = 0;
@@ -13,7 +14,7 @@ const timePenalty = 10;
 // questions/multiple choice arrays
 const questions = [
     {
-        question: "What color is the book '1Q84' by Haruki Murakami?", 
+        question: "What color is the book '1Q84' by Haruki Murakami?", // question 0, etc.
         choice: ["Green", "Black", "Red", "White"],
         answer: 3
     },
@@ -36,8 +37,7 @@ const questions = [
 ];
 
 function startQuiz() {
-    const quizBtn = document.getElementById("start-btn")
-    quizBtn.addEventListener("click", function(){startQuiz})
+    console.log("I got here!")
     correctAnswers = 0;
     userScore = 0;
     currentQuestionIndex = 0;
@@ -45,11 +45,11 @@ function startQuiz() {
     startTimer();
 }
 
-function startTimer(){ // starts timer
+// starts timer
+function startTimer(){ 
     quizTimer = setInterval(function () {
         timerStart--;
-        updateTimer();
-
+        updateTime();
     if(timerStart <= 0) {
         clearInterval(quizTimer)
         endQuiz();
@@ -59,16 +59,15 @@ function startTimer(){ // starts timer
 
 function updateTime(){
     const timeDisplay = document.querySelector(".seconds");
-    timerDisplay.textContent = timerStart
+    timeDisplay.textContent = timerStart
 }
 
 function showQuestion() {
-
     const quizContainer = document.querySelector(".showquest");
     quizContainer.innerHTML = "";
 
-    const currentQuestion = questions[currentQuestionIndex];
-    currentQuestion = questions[0];
+    // const currentQuestion = questions[currentQuestionIndex];
+    currentQuestion = questions[currentQuestionIndex];
   
     const questionElement = document.createElement("div");
     questionElement.textContent = currentQuestion.question;
@@ -80,9 +79,29 @@ function showQuestion() {
         choiceButton.addEventListener("click", function(){checkAns}(index))
         choiceContainer.appendChild(choiceButton);
     });
-
     quizContainer.appendChild(questionElement);
     quizContainer.appendChild(choiceContainer);
+}
+
+// +1 question after being answered or end quiz
+function incrQuestion(){
+    currentQuestionIndex++;
+    if (currentQuestion < questions.length) {
+        showQuestion();
+    } else {
+        endQuiz();
+    }
+}
+
+// answer check + score/penalty
+function checkAns(userChoice){
+    if (userChoice === questions[currentQuestionIndex].answer) {
+        correctAnswers++;
+        userScore == 10; // adds score based on boolean = true
+    } else {
+        userScore -= timePenalty;
+    }
+    incrQuestion();    
 }
 
     /* const questionHeading = document.createElement('h2');
@@ -98,40 +117,14 @@ function showQuestion() {
     }
 }*/
 
-// answer check + score/penalty
-function checkAns(userChoice){
-    if (userChoice === questions[currentQuestionIndex].answer) {
-        correctAnswers++;
-        userScore == 10; // adds score based on boolean = true
-    } else {
-        userScore -= timePenalty;
-    }
-    incrQuestion();    
-}
-
-// +1 question after being answered or end quiz
-function incrQuestion(){
-    currentQuestionIndex++;
-    if (currentQuestion < questions.length) {
-        showQuestion();
-    } else {
-        endQuiz();
-    }
-}
-
 function endQuiz() {
     clearInterval(quizTimer);
-    gameOver();
+    // gameOver();
     listScore();
+    saveResults();
     // endQuiz -> reset timer
     // if no more questions, endQuiz
     // on endQuiz show listUsers
-}
-
-function gameOver(){
-    clearInterval(quizTimer);
-    saveResults();
-    listScore();
 }
 
 function saveResults(){
@@ -141,13 +134,12 @@ function saveResults(){
         score: userScore,
     };
     scoreBoard.push(userResult);
-    const jsonString = '{"initials": "' + userResult.initials + '", "score": ' + userResult.score + '}';
-    localStorage.setItem("results", jsonString);
+    localStorage.setItem("results", JSON.stringify(scoreBoard));
 }
 
 function loadResults(){
     const finalResults = localStorage.getItem("results");
-    const userResult = JSON.parse(userResultString);
+    const userResult = JSON.parse(final);
     if (userResult){  
         scoreBoard.push(finalResults);
         listScore();
@@ -188,11 +180,9 @@ function listScore(){
 
 
 
-}
+// }
 
-
-
-
+document.getElementById("startQuiz").addEventListener("click", startQuiz)
 
 
 

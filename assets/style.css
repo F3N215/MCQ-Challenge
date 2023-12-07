@@ -7,37 +7,27 @@
 
 body{
     background: #ae5555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .start-btn,
 .infobox{
-    position: absolute;
+    position: fixed;  /* flex applies to children via parent element, not child itself */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .listrules{
-    width: 540px;
+    width: 500px;
     background: #ffff;
     border-radius: 10px;
 }
 
-/* start button */
-.start-btn button{
-    font-size: 25px;
-    font-weight: 550px;
-    background-color: rgb(255, 255, 255);
-    color:rgb(0, 0, 0);
-    padding: 15px 30px;
-    outline: none;
-    box-shadow: 5px 1px 10px 1px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
 .infobox{
-    display: none; /* change later */
     width: 500px;
     background: #fff;
     border-radius: 10px;
@@ -93,7 +83,16 @@ body{
     transition: all 0.4s ease;
 }
 
-/* quit & reset buttons */
+/* start, quit & reset buttons */
+.buttons button.start{
+    color: #0469d5;
+}
+
+.buttons button.start:hover{
+    color: #fff;
+    background: #0469d5;
+}
+
 .buttons button.reset{
     color: #0469d5;
 }
