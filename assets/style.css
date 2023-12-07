@@ -36,13 +36,13 @@ body{
     cursor: pointer;
 }
 
-.rules{
+.infobox{
     width: 500px;
-     background: #fff;
-     border-radius: 10px;
+    background: #fff;
+    border-radius: 10px;
 }    
 
-.rules .how-to-play{
+.infobox .how-to-play{
     height: 60px;
     width: 100%;
     text-align: center;
@@ -54,10 +54,18 @@ body{
     font-weight: 600px;
 }
 
-.list-rules .rule{
+.infobox .list-rules{
     padding: 15px 35px;
 }
 
-.list-rules .rule{
-
+.infobox .list-rules .rule{
+    margin: 5px 0;
+    font-size: 17px;
 }
+
+.infobox .list-rules .info span{
+    font-weight: 600;
+    color: #007bff;
+}
+
+.infobox 
