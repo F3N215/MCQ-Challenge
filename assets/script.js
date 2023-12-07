@@ -122,7 +122,7 @@ function incrQuestion(){
 function endQuiz() {
     clearInterval(quizTimer);
     gameOver();
-    listUsers();
+    listScore();
     // endQuiz -> reset timer
     // if no more questions, endQuiz
     // on endQuiz show listUsers
@@ -131,7 +131,7 @@ function endQuiz() {
 function gameOver(){
     clearInterval(quizTimer);
     saveResults();
-    listUsers();
+    listScore();
 }
 
 function saveResults(){
@@ -140,8 +140,9 @@ function saveResults(){
         initials: userSig,
         score: userScore,
     };
-    scoreBoard.push(userResult)
-    localStorage.setItem("results", JSON.stringify(userResult));
+    scoreBoard.push(userResult);
+    const jsonString = '{"initials": "' + userResult.initials + '", "score": ' + userResult.score + '}';
+    localStorage.setItem("results", jsonString);
 }
 
 function loadResults(){
@@ -153,10 +154,15 @@ function loadResults(){
     };   
 }
 
-function listUsers(){
+/* function listUsers(){
     const userContainer = document.getElementById("score-board");
     userContainer.innerHTML = "";
-}
+    for (const user of scoreBoard){
+        const userElmnt = document.createElement("div");
+        userElmnt.textContent
+
+    }
+} */
 
 function listScore(){
     const scoreContainer = document.getElementById("score-board");
@@ -164,7 +170,7 @@ function listScore(){
 
     for(const user of scoreBoard) {
         const userElmnt = document.createElement("div");
-        userElmnt.textContent = 'User Score: ${user.score}';
+        userElmnt.textContent = 'User Score: ' + user.score;
         scoreContainer.appendChild(scoreElmnt);
     }
 }
