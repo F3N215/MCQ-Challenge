@@ -10,14 +10,14 @@ body{
 }
 
 .start-btn,
-.rules{
+.infobox{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.list-rules{
+.listrules{
     width: 540px;
     background: #ffff;
     border-radius: 10px;
@@ -37,6 +37,7 @@ body{
 }
 
 .infobox{
+    display: none; /* change later */
     width: 500px;
     background: #fff;
     border-radius: 10px;
@@ -89,23 +90,24 @@ body{
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-.buttons button.restart{
+/* quit & reset buttons */
+.buttons button.reset{
+    color: #0469d5;
+}
+
+.buttons button.reset:hover{
     color: #fff;
     background: #0469d5;
 }
 
-.buttons button.restart:hover{
-    background: #0469d5;
-}
-
-.buttons button.quit{
+.buttons button.exit{
     color: #0469d5;
 }
 
-.buttons button.quit:hover{
+.buttons button.exit:hover{
     color: #fff;
     background: #0469d5;
 }
