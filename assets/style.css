@@ -42,7 +42,7 @@ body{
     border-radius: 10px;
 }    
 
-.infobox .how-to-play{
+.infobox .howtoplay{
     height: 60px;
     width: 100%;
     text-align: center;
@@ -54,18 +54,58 @@ body{
     font-weight: 600px;
 }
 
-.infobox .list-rules{
+.infobox .listrules{
     padding: 15px 35px;
 }
 
-.infobox .list-rules .rule{
+.infobox .listrules .rule{
     margin: 5px 0;
     font-size: 17px;
 }
 
-.infobox .list-rules .info span{
+.infobox .howtoplay span{
     font-weight: 600;
-    color: #007bff;
+    color: #000000;
+    text-align: center;
+    justify-content: center;
 }
 
-.infobox 
+.infobox .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid lightgrey;
+}
+
+.infobox .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #0469d5;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons button.restart{
+    color: #fff;
+    background: #0469d5;
+}
+
+.buttons button.restart:hover{
+    background: #0469d5;
+}
+
+.buttons button.quit{
+    color: #0469d5;
+}
+
+.buttons button.quit:hover{
+    color: #fff;
+    background: #0469d5;
+}
