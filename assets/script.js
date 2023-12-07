@@ -36,6 +36,8 @@ const questions = [
 ];
 
 function startQuiz() {
+    const quizBtn = document.getElementById("start-btn")
+    quizBtn.addEventListener("click", function(){startQuiz})
     currentQuestionIndex = 0;
     showQuestion();
     startTimer();
@@ -55,15 +57,31 @@ function startTimer(){
 
 function updateTime(){
     const timeDisplay = document.getElementById("time-display")
-
-
 }
 
 function showQuestion() {
-    const questionContainer = document.getElementById("quiz-container");
-    const questionHeading = document.createElement('h2');
-    questionHeading.textContent = questions[currentQuestionIndex].question // topdown order of questions
+    const quizContainer = document.getElementById("quiz-container");
     quizContainer.innerHTML = "";
+
+    const currentQuestion = questions[0];
+    const questionElement = document.createElement("div");
+    questionElement.textContent = currentQuestion.question;
+
+    const choiceContainer = document.createElement("choice-container");
+    currentQuestion.choice.forEach((choice, index) => {
+        const choiceButton = document.createElement("button");
+        choiceButton.textContent = choice;
+        choiceButton.addEventListener("click", function(){checkAns}(index))
+        choiceContainer.appendChild(choiceButton);
+    });
+
+    quizContainer.appendChild(questionElement);
+    quizContainer.appendChild(choiceContainer);
+}
+
+    /* const questionHeading = document.createElement('h2');
+    questionHeading.textContent = questions[currentQuestionIndex].question // topdown order of questions
+    
     quiztionContainer.appendChild(questionHeading);
     
     for (let i = 0; i < questions[currentQuestionIndex].choice.length; i++) {
@@ -72,7 +90,7 @@ function showQuestion() {
     choiceBtn.addEventListener("click", () => checkAns(i));
     questionContainer.appendChild(choiceBtn);   
     }
-}
+}*/
 
 // answer check + score/penalty
 function checkAns(userChoice){
@@ -204,33 +222,3 @@ function listUsers(){
 
 
 
-
-
-/*
-function createQuiz(questions, quizContainer, resultsContainer, submitBtn){
-    }
-    function showQuestions(questions, quizContainer){
-        var output = [];
-        var answers; 
-        for(var i=0; i < questions.length; i++){
-            answers = []
-            for(letter in questions[i].answers){
-                answers.push(
-                    '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-                        + letter + ': '
-                        + questions[i].answers[letter]
-                    + '</label>'
-                );
-            }
-        output.push(
-            '<div class="question">' + questions[i].question + '</div>',
-            + '<div class="answers">'+ answers.join('') + '</div>'
-            );
-        }
-        quizContainer.innerHTML = output.join('');
-    }
-
-    function showScore(questions, quizContainer, resultsContainer){
-    }
-*/
