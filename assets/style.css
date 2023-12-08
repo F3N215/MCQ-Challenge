@@ -13,6 +13,38 @@ body{
     min-height: 100vh;
 }
 
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 3rem;
+    justify-content: top;
+    align-items: center;
+}
+
+.javascript-quiz {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* add image?? */
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: top;
+    margin-bottom: 30%;
+}
+
+.minute,
+.seconds,
+.mseconds {
+    font-size: 1rem;
+}
+
+
+
 .start-btn,
 .infobox{
     position: fixed;  /* flex applies to children via parent element, not child itself */
