@@ -14,24 +14,39 @@ const timePenalty = 10;
 // questions/multiple choice arrays
 const questions = [
     {
-        question: "What color is the book '1Q84' by Haruki Murakami?", // question 0, etc.
-        choice: ["Green", "Black", "Red", "White"],
-        answer: 3
+        question: "Which of the following is not a primitive data type in JavaScript?", // question 0, etc.
+        choice: ["Number", "Object", "String", "Boolean"],
+        answer: 1
     },
     {
-        question: "Who is Anton Chigurh?",
-        choice: ["A policeman", "A milkman", "An assassin", "An optometrist"],
+        question: "What does the “this” keyword refer to in JavaScript?",
+        choice: ["Current function", "Global object", "Object belonging to function", "Parent object"],
         answer: 2
     },
     {
-        question: "In Neil Gaiman's 'Sandman' who are the 3 Nightmares?", 
-        choice: ["Gorf, Hulpert, & Brega", "Corinthian, Fiddler's Green, & Gault","Terry, Howard & Ryan", "Omega, Alomar, & Torson"],
+        question: "Which of the following is not a loop in JavaScript?", 
+        choice: ["for", "while", "do ... while", "next"],
+        answer: 3
+    },
+    {
+        question: "Which JavaScript label catches all the values, except for the ones specified?",
+        choice: ["catch", "label", "try", "default"],
+        answer: 3
+    },
+    {
+        question: "Which are the correct “if” statements to execute certain code if “x” is equal to 2?",
+        choice: ["if(x 2)", "if(x=2)", "if(x==2)", "if(x !=2)"],
         answer: 2
     },
     {
-        question: "In Netflix's 'Daredevil', who is Matt Murdock's legal partner?", 
-        choice: ["Michael", "Hubert", "Foggy", "Franklin"],
-        answer: 3
+        question: "How do you call the function named 'partyFunction'?",
+        choice: ["partyFunction()", "call function partyFunction()", "call partyFunction()", "welike to partyFunction()"],
+        answer: 0
+    },
+    {
+        question: "How do you call the function named 'partyFunction'?",
+        choice: ["partyFunction()", "call function partyFunction()", "call partyFunction()", "welike to partyFunction()"],
+        answer: 0
     },
     // add more questions here
 ];
@@ -211,25 +226,6 @@ document.getElementById("startQuiz").addEventListener("click", startQuiz)
         showResults(questions, quizContainer, resultsContainer);
     }
 } 
-
-
-
-
-
-
-
-
-
-/* PSEUDO
-- I want to trigger a set of questions when a user hits the start button
-- I want to loop through all questions in the array
-- I want to get the number of the questions answered correctly
-- When the first question is clicked I want a timer to start
-
-- I want to show a score of correct questions vs. incorrect questions (results)
-- I need a place to put the quiz, space for results, and a button
-- I need to store output and answer choices */
-
 
 
 

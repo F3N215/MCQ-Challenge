@@ -1,128 +1,107 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body{
+body {
     background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 3rem; /* Adjust text size for headers */
     font-weight: bold;
-    padding: 3rem;
-    justify-content: top;
-    align-items: center;
+    padding: 1rem;
 }
 
 .javascript-quiz {
-    min-height: 100vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /* add image?? */
 }
 
 .container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
     padding: 10px;
 }
 
-.timer{
+.timer {
     background: #fff;
     border-radius: 5px;
     padding: 10px;
+    margin-top: 1rem; /* Adjust margin for the timer */
+    align-self: flex-end;
 }
 
 .countdown {
     display: flex;
-    justify-content: space-around;
-    text-align: top;
-    margin-bottom: 30%;
+    flex-direction: column;
 }
 
 .minute,
 .seconds,
 .mseconds {
-    font-size: 1rem;
+    font-size: 2rem; /* Adjust text size for timer */
 }
 
 /* infobox & rules styling */
 .start-btn,
-.infobox{
-    position: fixed;  /* flex applies to children via parent element, not child itself */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.infobox {
+    position: relative;
+    margin: 1rem 0;
 }
 
-.listrules{
-    width: 500px;
-    background: #ffff;
-    border-radius: 10px;
-}
-
-.infobox{
-    width: 500px;
+.listrules,
+.infobox {
+    width: 100%; 
+    max-width: 500px; 
     background: #fff;
     border-radius: 10px;
-} 
+    margin: 0 auto;
+}
 
-.infobox .howtoplay{
-    height: 60px;
-    width: 100%;
+.infobox .howtoplay {
+    height: auto;
     text-align: center;
     border-bottom: 1px solid lightgrey;
-    display: flex;
-    align-items: center;
-    padding: 0 35px;
-    font-size: 20px;
-    font-weight: 600px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.infobox .listrules{
-    padding: 15px 35px;
+.infobox .listrules {
+    padding: 4rem;
 }
 
-.infobox .listrules .rule{
-    margin: 5px 0;
-    font-size: 17px;
+.infobox .listrules .rule {
+    margin: 0.5rem 0;
+    font-size: 1rem;
 }
 
-.infobox .howtoplay span{
+.infobox .howtoplay span {
     font-weight: 600;
     color: #000000;
-    text-align: center;
-    justify-content: center;
 }
 
-.infobox .buttons{
-    height: 60px;
+.infobox .buttons {
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 0 35px;
+    justify-content: center;
+    padding: 1rem;
     border-top: 1px solid lightgrey;
 }
 
-.infobox .buttons button{
-    margin: 0 5px;
+.infobox .buttons button {
+    margin: 0.5rem;
     height: 40px;
     width: 100px;
     border: 1px solid #0469d5;
     border-radius: 5px;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.4s ease;
@@ -136,36 +115,64 @@ h1 {
 }
 
 /* start, quit & reset buttons */
-.buttons button.start{
+.buttons button.start {
     color: #0469d5;
 }
 
-.buttons button.start:hover{
+.buttons button.start:hover {
     color: #fff;
     background: #0469d5;
 }
 
-.buttons button.reset{
+.buttons button.reset {
     color: #0469d5;
 }
 
-.buttons button.reset:hover{
+.buttons button.reset:hover {
     color: #fff;
     background: #0469d5;
 }
 
-.buttons button.exit{
+.buttons button.exit {
     color: #0469d5;
 }
 
-.buttons button.exit:hover{
+.buttons button.exit:hover {
     color: #fff;
     background: #0469d5;
 }
 
 /* media queries */
 @media only screen and (max-width: 768px) {
-    body {
-        background-color: #8f8f8f;
+    h1 {
+        font-size: 2rem; /* Adjust text size for headers on smaller screens */
+    }
+
+    .timer {
+        align-self: center; /* Center the timer on smaller screens */
+        margin-top: 1rem; /* Adjust margin for the timer on smaller screens */
+    }
+
+    .countdown {
+        align-items: center;
+    }
+
+    .minute,
+    .seconds,
+    .mseconds {
+        font-size: 1.5rem; /* Adjust text size for timer on smaller screens */
+    }
+
+    .infobox .howtoplay {
+        font-size: 1.2rem;
+    }
+
+    .infobox .listrules .rule {
+        font-size: 1rem;
+    }
+
+    .infobox .buttons button {
+        height: 30px;
+        font-size: 0.8rem;
     }
 }
