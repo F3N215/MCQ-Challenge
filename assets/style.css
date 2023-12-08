@@ -10,11 +10,17 @@ body {
     min-height: 100vh;
 }
 
-h1 {
-    font-size: 3rem; /* Adjust text size for headers */
+h4 {
+    font-size: 2rem;
     font-weight: bold;
-    padding: 1rem;
+    text-decoration: wavy;
+    padding: 3rem;
 }
+
+.testyourmight h4.hidden{
+    display: none;
+}
+
 
 .javascript-quiz {
     display: flex;

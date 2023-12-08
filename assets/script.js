@@ -54,6 +54,7 @@ const questions = [
 function hideInfobox(){
     const infobox = document.getElementById('infoBox');
     infobox.style.display = 'none';
+    document.querySelector('.testyourmight h4').classList.remove('hidden');
 }
 
 function showQuizbox(){
@@ -201,9 +202,6 @@ function listScore(){
     questionContainer.appendChild(choiceBtn);   
     }
 }*/
-
-
-// }
 
 document.getElementById("startQuiz").addEventListener("click", startQuiz)
   
