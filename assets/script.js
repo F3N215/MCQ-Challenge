@@ -225,8 +225,4 @@ document.getElementById("startQuiz").addEventListener("click", startQuiz)
     submitBtn.onclick = function(){
         showResults(questions, quizContainer, resultsContainer);
     }
-} 
-
-
-
-
+} */
