@@ -78,17 +78,18 @@ function showQuestion() {
     const quizContainer = document.querySelector(".showquest");
     quizContainer.innerHTML = "";
 
-    // const currentQuestion = questions[currentQuestionIndex];
     currentQuestion = questions[currentQuestionIndex];
   
     const questionElement = document.createElement("div");
     questionElement.textContent = currentQuestion.question;
 
-    const choiceContainer = document.createElement("choice-container");
+    const choiceContainer = document.createElement("div");
     currentQuestion.choice.forEach((choice, index) => {
         const choiceButton = document.createElement("button");
         choiceButton.textContent = choice;
-        choiceButton.addEventListener("click", function(){checkAns}(index))
+        choiceButton.addEventListener("click", function(){
+            rankAns(index);
+        });
         choiceContainer.appendChild(choiceButton);
     });
     quizContainer.appendChild(questionElement);
@@ -98,7 +99,7 @@ function showQuestion() {
 // +1 question after being answered or end quiz
 function incrQuestion(){
     currentQuestionIndex++;
-    if (currentQuestion < questions.length) {
+    if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
         endQuiz();
@@ -107,27 +108,19 @@ function incrQuestion(){
 
 // answer check + score/penalty
 function checkAns(userChoice){
-    if (userChoice === questions[currentQuestionIndex].answer) {
+    if (userChoice === currentQuestion.answer) {
         correctAnswers++;
-        userScore == 10; // adds score based on boolean = true
+        userScore += 10; // adds score based on boolean = true
     } else {
         userScore -= timePenalty;
     }
     incrQuestion();    
 }
 
-    /* const questionHeading = document.createElement('h2');
-    questionHeading.textContent = questions[currentQuestionIndex].question // topdown order of questions
-    
-    quiztionContainer.appendChild(questionHeading);
-    
-    for (let i = 0; i < questions[currentQuestionIndex].choice.length; i++) {
-    const choiceBtn = document.createElement("button");
-    choiceBtn.textContent = questions[currentQuestionIndex].choice[i];
-    choiceBtn.addEventListener("click", () => checkAns(i));
-    questionContainer.appendChild(choiceBtn);   
-    }
-}*/
+function rankAns(index){
+    checkAns(index);
+    incrQuestion();
+}
 
 function endQuiz() {
     clearInterval(quizTimer);
@@ -158,6 +151,18 @@ function loadResults(){
     };   
 }
 
+function listScore(){
+    const scoreContainer = document.getElementById("score-board");
+    scoreContainer.innerHTML = "";
+
+    for(const user of scoreBoard) {
+        const userElmnt = document.createElement("div");
+        userElmnt.textContent = 'User Score: ' + user.score;
+        scoreContainer.appendChild(userElmnt);
+    }
+}
+
+
 /* function listUsers(){
     const userContainer = document.getElementById("score-board");
     userContainer.innerHTML = "";
@@ -168,16 +173,18 @@ function loadResults(){
     }
 } */
 
-function listScore(){
-    const scoreContainer = document.getElementById("score-board");
-    scoreContainer.innerHTML = "";
-
-    for(const user of scoreBoard) {
-        const userElmnt = document.createElement("div");
-        userElmnt.textContent = 'User Score: ' + user.score;
-        scoreContainer.appendChild(scoreElmnt);
+    /* const questionHeading = document.createElement('h2');
+    questionHeading.textContent = questions[currentQuestionIndex].question // topdown order of questions
+    
+    quiztionContainer.appendChild(questionHeading);
+    
+    for (let i = 0; i < questions[currentQuestionIndex].choice.length; i++) {
+    const choiceBtn = document.createElement("button");
+    choiceBtn.textContent = questions[currentQuestionIndex].choice[i];
+    choiceBtn.addEventListener("click", () => checkAns(i));
+    questionContainer.appendChild(choiceBtn);   
     }
-}
+}*/
 
     // need to create <ul> 
     // need to create <li>
