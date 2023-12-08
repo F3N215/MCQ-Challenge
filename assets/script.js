@@ -113,6 +113,7 @@ function checkAns(userChoice){
         userScore += 10; // adds score based on boolean = true
     } else {
         userScore -= timePenalty;
+        timerStart -= 10; // deducts time 
     }
     incrQuestion();    
 }
@@ -186,30 +187,11 @@ function listScore(){
     }
 }*/
 
-    // need to create <ul> 
-    // need to create <li>
-    // need to enter initials/save score
-    // play again <btn>
-    
-    // getting a handle on this div
-    // scoreContainer.textContent = scoreBoard
-
-
-
-
-
 
 // }
 
 document.getElementById("startQuiz").addEventListener("click", startQuiz)
-
-
-
-
-
-
-    
-
+  
 
 /* const choices = document.querySelectorAll(".choice");
     choices.forEach((choice, index) => {
