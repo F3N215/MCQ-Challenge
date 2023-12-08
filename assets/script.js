@@ -36,11 +36,23 @@ const questions = [
     // add more questions here
 ];
 
+function hideInfobox(){
+    const infobox = document.getElementById('infoBox');
+    infobox.style.display = 'none';
+}
+
+function showQuizbox(){
+    const quizbox = document.getElementById('quizBox');
+    quizbox.style.display = 'block';
+}
+
 function startQuiz() {
     console.log("I got here!")
     correctAnswers = 0;
     userScore = 0;
     currentQuestionIndex = 0;
+    hideInfobox();
+    showQuizbox();
     showQuestion();
     startTimer();
 }

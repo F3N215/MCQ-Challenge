@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #000000;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +30,20 @@ h1 {
     /* add image?? */
 }
 
+.container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.timer{
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 .countdown {
     display: flex;
     justify-content: space-around;
@@ -43,8 +57,7 @@ h1 {
     font-size: 1rem;
 }
 
-
-
+/* infobox & rules styling */
 .start-btn,
 .infobox{
     position: fixed;  /* flex applies to children via parent element, not child itself */
@@ -63,7 +76,7 @@ h1 {
     width: 500px;
     background: #fff;
     border-radius: 10px;
-}    
+} 
 
 .infobox .howtoplay{
     height: 60px;

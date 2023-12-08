@@ -7,28 +7,20 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <section class="javascript-quiz">
-        <div>
-            <h1>Test Your Might!</h1>
-            <div class="timer">
-                <div class="countdown">
-                    <div class="container-minutes">
-                        <h3 class="minute">Time</h3>
-                        <h3>Minutes</h3>
-                    </div>
-                    <div class="container-seconds">
-                        <h3 class="seconds">Seconds</h3>
-                    </div>
-                    <div class="container-mili">
-                        <h3 class="mseconds">Miliseconds</h3>
-                    </div>
+    <div class="container">
+        <!-- Move the timer div to the upper right-hand corner -->
+        <div class="timer">
+            <div class="countdown">
+                <div class="container-seconds">
+                    <h3 class="seconds">Seconds</h3>
                 </div>
             </div>
         </div>
-    </section>
 
     <!-- rules -->
-    <div class="infobox">
+    <section class="javascript-quiz">
+        <h1>Test Your Might!</h1>
+    <div class="infobox" id="infoBox">
         <div class="howtoplay">
             <span>How to Play</span>
         </div>
@@ -44,8 +36,10 @@
             <button class="reset">Reset?</button>
         </div>
     </div>
+
+
     <!-- quizbox --> 
-    <div class="quizbox">
+    <div class="quizbox" id="quizBox">
         <header>
             <div class="timer">
                 <div class="timeremaining">Time Remaining</div>
