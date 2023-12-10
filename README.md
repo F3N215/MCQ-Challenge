@@ -24,16 +24,10 @@
 
 # Collaboration Workflow 🦾
 * After reviewing some of my work with my mentor who helped further my understanding
-* Requested information details from Xpert Learning Assistant for assistance on proper syntax and understanding logic behind the code
+* Requested information details from Xpert Learning Assistant for assistance on proper syntax and understanding the logic behind the code
 * Arranged two tutoring sessions to help guide my code logic and connect HTML
 * Finally, reviewed additional JavaScript course materials and connected a final time with my mentor
-
------
-## Screenshots 📸
-* ![Full Page View](images/Screenshot-1.png)
-* ![Logged to Console](images/Screenshot-2.png)
-* <a href="https://streamable.com/jc3307">Short Screen Recording</a>
-
+* 
 -----
 ## About Me
 <h3 align="left">Hey there! I'm Dan 👋 I'm a junior fullstack webdev</h3>
