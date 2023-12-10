@@ -141,12 +141,33 @@ function rankAns(index){
 
 function endQuiz() {
     clearInterval(quizTimer);
-    // gameOver();
     listScore();
     saveResults();
-    // endQuiz -> reset timer
-    // if no more questions, endQuiz
-    // on endQuiz show listUsers
+
+    const quizbox = document.getElementById('quizBox');
+    quizbox.innerHTML = '';
+
+    const finalScoreElement = document.createElement('div');
+    finalScoreElement.textContent = 'Your Final Score: ' + userScore;
+    quizbox.appendChild(finalScoreElement);
+
+    const initialsContainer = document.createElement('div');
+    initialsContainer.classList.add('input-initials');
+    const initialsLabel = document.createElement('label');
+    initialsLabel.textContent = 'Enter Your Initials:';
+    const initialsInput = document.createElement('input');
+    initialsInput.setAttribute('type', 'text');
+    initialsInput.setAttribute('id', 'input-initials');
+    initialsContainer.appendChild(initialsLabel);
+    initialsContainer.appendChild(initialsInput);
+    quizbox.appendChild(initialsContainer);
+
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit';
+    submitButton.addEventListener('click', function () {
+        saveResults();
+    });
+    quizbox.appendChild(submitButton);
 }
 
 function saveResults(){
@@ -161,7 +182,7 @@ function saveResults(){
 
 function loadResults(){
     const finalResults = localStorage.getItem("results");
-    const userResult = JSON.parse(final);
+    const userResult = JSON.parse(results);
     if (userResult){  
         scoreBoard.push(finalResults);
         listScore();
@@ -170,7 +191,9 @@ function loadResults(){
 
 function listScore(){
     const scoreContainer = document.getElementById("score-board");
-    scoreContainer.innerHTML = "";
+   // scoreContainer.innerHTML = "";
+
+    loadResults();
 
     for(const user of scoreBoard) {
         const userElmnt = document.createElement("div");
