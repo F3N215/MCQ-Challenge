@@ -202,48 +202,4 @@ function listScore(){
     }
 }
 
-
-/* function listUsers(){
-    const userContainer = document.getElementById("score-board");
-    userContainer.innerHTML = "";
-    for (const user of scoreBoard){
-        const userElmnt = document.createElement("div");
-        userElmnt.textContent
-
-    }
-} */
-
-    /* const questionHeading = document.createElement('h2');
-    questionHeading.textContent = questions[currentQuestionIndex].question // topdown order of questions
-    
-    quiztionContainer.appendChild(questionHeading);
-    
-    for (let i = 0; i < questions[currentQuestionIndex].choice.length; i++) {
-    const choiceBtn = document.createElement("button");
-    choiceBtn.textContent = questions[currentQuestionIndex].choice[i];
-    choiceBtn.addEventListener("click", () => checkAns(i));
-    questionContainer.appendChild(choiceBtn);   
-    }
-}*/
-
 document.getElementById("startQuiz").addEventListener("click", startQuiz)
-  
-
-/* const choices = document.querySelectorAll(".choice");
-    choices.forEach((choice, index) => {
-        choice.textContent = questions[currentQuestion].choice[index];
-    });
-
-
-/* submit functions to show results 
-    function showResults(questions, quizContainer, resultsContainer){
-        showQuestions(questions, quizContainer);
-        subtmitButton.onclick - function(){
-            showResults(questions, quizContainer, resultsContainer);
-        }
-       
-    showQuestions(questions, quizContainer);
-    submitBtn.onclick = function(){
-        showResults(questions, quizContainer, resultsContainer);
-    }
-} */

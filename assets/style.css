@@ -112,12 +112,23 @@ h4 {
     cursor: pointer;
     transition: all 0.4s ease;
 }
-
+/* quiz + option buttons */
 .quizbox {
     font-weight: 600;
     color: #000000;
     text-align: center;
     justify-content: center;
+}
+
+.showquest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.showquest button {
+    margin: 20px 0;
+    width: 200px
 }
 
 /* start, quit & reset buttons */
